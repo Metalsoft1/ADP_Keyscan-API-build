@@ -1,0 +1,22 @@
+﻿paths:
+  keyscan_csv: "samples/keyscan_export.csv"
+  mapping_csv: "mapping/mapping.csv"
+  assignment_lookup_csv: "output/adp_assignment_lookup_full.csv"
+  queue_out: "output/punch_queue.json"
+  posted_hashes: "punch_engine/state/posted_hashes.csv"
+  dead_letter: "punch_engine/state/dead_letter.jsonl"
+  logs_dir: "punch_engine/logs"
+
+engine:
+  timezone: "America/Chicago"
+  lookback_minutes: 999999
+  dry_run: true
+  max_posts_per_run: 500
+
+adp:
+  environment: "prod"
+  api_base: "https://api.adp.com"
+  timeout_seconds: 30
+  max_retries: 5
+  retry_backoff_seconds: 2
+  punch_post_path: "/events/time/v2/time-entries.modify"
